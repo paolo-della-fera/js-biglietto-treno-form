@@ -39,17 +39,50 @@ btnEl.addEventListener('click', function () {
     console.log('Il prezzo del biglietto è: ' + price.toFixed(2) + '€'); */
 
     // mostro in pagina il recap dei dati e il prezzo del biglietto 
-    outputEl.innerHTML =
-        'Km: ' + kmEl.value + '<br>' +
-        'Età: ' + ageEl.value + '<br>' +
-        'Prezzo finale: ' + price.toFixed(2) + '€';
+    outputEl.innerHTML = `
+  <div class="card shadow-sm">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <span class="fw-semibold">Recap biglietto</span>
+    </div>
+
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="text-muted small">Nome e Cognome</div>
+          <div class="fw-semibold">${nameUl.value}</div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="text-muted small">Km</div>
+          <div class="fw-semibold">${kmEl.value}</div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="text-muted small">Fascia età</div>
+          <div class="fw-semibold">${ageEl.value}</div>
+        </div>
+
+        <div class="col-12">
+          <hr class="my-2">
+        </div>
+
+        <div class="col-6">
+          <div class="text-muted small">Prezzo finale</div>
+          <div class="fs-4 fw-bold">${price.toFixed(2)}€</div>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+
 })
 
 
-resetEl.addEventListener('click', function(){
+resetEl.addEventListener('click', function () {
     nameUl.value = '';
     kmEl.value = '';
     ageEl.value = '';
+    outputEl.innerHTML = '';
 })
 
 
