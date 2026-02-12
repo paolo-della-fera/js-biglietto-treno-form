@@ -3,6 +3,8 @@ const btnEl = document.getElementById('btn');
 const kmEl = document.getElementById('km');
 const ageEl = document.getElementById('age');
 const outputEl = document.getElementById('output')
+const resetEl = document.getElementById('btn-reset')
+const nameUl = document.getElementById('name')
 
 // prezzo per kilometro 
 const priceKm = 0.21;
@@ -43,5 +45,11 @@ btnEl.addEventListener('click', function () {
         'Prezzo finale: ' + price.toFixed(2) + '€';
 })
 
+
+resetEl.addEventListener('click', function(){
+    nameUl.value = '';
+    kmEl.value = '';
+    ageEl.value = '';
+})
 
 
