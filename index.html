@@ -11,7 +11,80 @@
 
 <body>
 
-   
+    <div class="container pb-4">
+        <!-- Header -->
+        <h1 class="text-center mb-5">Calcola il prezzo del tuo biglietto</h1>
+        <div class="container">
+            <form>
+                <!-- form per inserire i dati del passeggero  -->
+                <div class="row">
+                    <div class="col">
+                        <h6>Nome Cognome</h6>
+                        <input type="text" class="form-control" placeholder="Nome e Cognome" id="name-field">
+                    </div>
+                    <div class="col">
+                        <h6>Km da percorrere</h6>
+                        <input type="text" class="form-control" placeholder="Km" id="km-field">
+                    </div>
+                    <div class="col">
+                        <h6>Fascia d'età</h6>
+                        <select class="form-select" id="age-field">
+                            <option selected>Choose...</option>
+                            <option value="1">Minorenne</option>
+                            <option value="2">Maggiorenne</option>
+                            <option value="3">Over 65</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center gap-3 mt-4">
+                    <button class="btn btn-primary">Genera</button>
+                    <button class="btn btn-primary">Annulla</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <h1 class="text-center">Il tuo biglietto</h1>
+        <div class="border border-2 p-3">
+            <!-- dettaglio dei passeggeri  -->
+            <div class="fw-bold text-uppercase mb-2">Dettaglio passeggeri</div>
+            <hr class="my-2">
+
+            <div class="row g-0 align-items-stretch">
+                <!-- Blocco sinistra (grigio) -->
+                <div class="col-12 col-md-3">
+                    <div class="h-100 p-3">
+                        <div class="fw-bold text-uppercase">Nome passeggero</div>
+                        <div class="fw-semibold" id="name">Jon Snow</div>
+                    </div>
+                </div>
+                <!-- Blocco destra (dati) -->
+                <div class="col-12 col-md-9">
+                    <div class="h-100 p-3">
+                        <!-- Intestazioni -->
+                        <div class="row fw-bold">
+                            <div class="col-12 col-sm-4">Offerta</div>
+                            <div class="col-4 col-sm-2">Carrozza</div>
+                            <div class="col-4 col-sm-3">Codice CP</div>
+                            <div class="col-4 col-sm-3">Costo biglietto</div>
+                        </div>
+                        <!-- Valori -->
+                        <div class="row mt-2">
+                            <div class="col-12 col-sm-4">Biglietto Standard</div>
+                            <div class="col-4 col-sm-2" id="numb-carriage">5</div>
+                            <div class="col-4 col-sm-3" id="numb-codeCp">92911</div>
+                            <div class="col-4 col-sm-3" id="price">2.10€</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-2">
+        </div>
+
+    </div>
+
 
     <script src="./main.js"></script>
 </body>
