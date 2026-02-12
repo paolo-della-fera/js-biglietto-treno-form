@@ -2,7 +2,7 @@
 const btnEl = document.getElementById('btn');
 const kmEl = document.getElementById('km');
 const ageEl = document.getElementById('age');
-
+const outputEl = document.getElementById('output')
 
 // prezzo per kilometro 
 const priceKm = 0.21;
@@ -13,7 +13,7 @@ btnEl.addEventListener('click', function () {
 
     // SE non vengono inseriti i dati stampo in console il messaggio 
     if (kmEl.value === '' || ageEl.value === '') {
-        console.log('Inserisci i tuoi dati');
+        outputEl.innerHTML = 'Inserisci i tuoi dati';
         return
     }
 
@@ -27,19 +27,20 @@ btnEl.addEventListener('click', function () {
 
     }
 
-    // SE il passeggero è over 65 ha lo sconto del %40
+    // ALTRIMENTI SE il passeggero è over 65 ha lo sconto del %40
     else if (ageEl.value === 'Over 65') {
         price = price * 0.6;
 
     }
 
-    // ALTRIMETI paga il prezzo pieno del biglietto 
-    else {
-        console.log("Nessuno sconto applicato, prezzo intero");
-    }
-    
-    // stempo il risultato in console 
-    console.log('Il prezzo del biglietto è: ' + price.toFixed(2) + '€');
+    /* // stempo il risultato in console 
+    console.log('Il prezzo del biglietto è: ' + price.toFixed(2) + '€'); */
+
+    // mostro in pagina il recap dei dati e il prezzo del biglietto 
+    outputEl.innerHTML =
+        'Km: ' + kmEl.value + '<br>' +
+        'Età: ' + ageEl.value + '<br>' +
+        'Prezzo finale: ' + price.toFixed(2) + '€';
 })
 
 
